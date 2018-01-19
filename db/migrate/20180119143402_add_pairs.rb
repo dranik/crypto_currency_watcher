@@ -7,8 +7,9 @@ class AddPairs < ActiveRecord::Migration[5.1]
       t.decimal   :minimum_margin
       t.decimal   :maximum_order_size
       t.decimal   :minimum_order_size
+      t.decimal   :margin
       t.datetime  :expiration
     end
-    add_index :pairs, :pair, unique: true
+    add_index :pairs, :name, unique: true
   end
 end

@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 20180119143448) do
     t.decimal "minimum_margin"
     t.decimal "maximum_order_size"
     t.decimal "minimum_order_size"
+    t.decimal "margin"
     t.datetime "expiration"
-    t.index [nil], name: "index_pairs_on_pair", unique: true
+    t.index ["name"], name: "index_pairs_on_name", unique: true
   end
 
   create_table "ticks", force: :cascade do |t|
