@@ -1,0 +1,10 @@
+ul
+  - @pairs.each do |pair|
+    li
+      = link_to pair.name ,pair_path(id: pair.id)
+- if @pairs.prev_page.present?
+  div
+    = link_to "Prev page", pairs_path(page: @pairs.prev_page)
+- if @pairs.next_page.present?
+  div
+    = link_to "Next page", pairs_path(page: @pairs.next_page)

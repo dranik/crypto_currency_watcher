@@ -1,0 +1,14 @@
+h3
+  = @pair.name
+ul
+  - @day_rates.find_each do |day_rate|
+    li
+      div
+        | High: &nbsp;
+        = day_rate.high
+      div
+        | Low: &nbsp;
+        = day_rate.low
+      div
+        | Date: &nbsp;
+        = day_rate.timestamp

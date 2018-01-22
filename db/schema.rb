@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180119143448) do
+ActiveRecord::Schema.define(version: 20180122124444) do
+
+  create_table "day_rates", force: :cascade do |t|
+    t.integer "pair_id"
+    t.decimal "low"
+    t.decimal "high"
+    t.datetime "timestamp"
+    t.index ["pair_id"], name: "index_day_rates_on_pair_id"
+  end
 
   create_table "pairs", force: :cascade do |t|
     t.string "name"

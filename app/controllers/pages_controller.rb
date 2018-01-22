@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def root
-    redirect_to action: "index", controler: pairs
+    redirect_to pairs_url
   end
 end

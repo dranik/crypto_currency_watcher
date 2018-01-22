@@ -1,0 +1,58 @@
+ul
+  li
+    | Pair name: &nbsp;
+    = @pair.name
+  li
+    | Base currency: &nbsp;
+    = @pair.base_currency
+  li
+    | Quote currency: &nbsp;
+    = @pair.quote_currency
+  li
+    | Quantity increment: &nbsp;
+    = @pair.quantity_increment
+  li
+    | Quantity currency: &nbsp;
+    = @pair.quantity_increment
+  li
+    | Tick size: &nbsp;
+    = @pair.tick_size
+  li
+    | Take liqudity rate: &nbsp;
+    = @pair.take_liquidity_rate
+  li
+    | Provide liqudity rate: &nbsp;
+    = @pair.provide_liquidity_rate
+  li
+    | Fee currency: &nbsp;
+    = @pair.fee_currency
+ul
+  li
+    | Ask: &nbsp;
+    = @rates.ask
+  li
+    | Bid: &nbsp;
+    = @rates.bid
+  li
+    | Last: &nbsp;
+    = @rates.last
+  li
+    | Open: &nbsp;
+    = @rates.open
+  li
+    | Low: &nbsp;
+    = @rates.low
+  li
+    | High: &nbsp;
+    = @rates.high
+  li
+    | Volume: &nbsp;
+    = @rates.volume
+  li
+    | Volume quote: &nbsp;
+    = @rates.volume_quote
+  li
+    | Timestamp: &nbsp;
+    = @rates.timestamp
+div
+  = link_to "History", controller: :pairs, action: :history

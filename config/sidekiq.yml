@@ -1,8 +1,11 @@
 :dynamic: true
 :schedule:
   ticks:
-    every: '5s'
+    every: ['1m', first_in: '1m']
     class: TicksWorker
   pairs:
-    every: '1h'
+    every: ['1h', first_in: '1s']
     class: PairsWorker
+  days:
+    cron: '10 0 * * *'
+    class: DayRatesWorker
