@@ -1,8 +1,8 @@
 require 'sidekiq-scheduler'
-class TicksWorker
+class PairsWorker
   include Sidekiq::Worker
 
   def perform(*args)
-    Hitbtc.new.do_tick
+    Hitbtc.new.update_pairs
   end
 end

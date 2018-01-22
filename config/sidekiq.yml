@@ -1,0 +1,8 @@
+:dynamic: true
+:schedule:
+  ticks:
+    every: '5s'
+    class: TicksWorker
+  pairs:
+    every: '1h'
+    class: PairsWorker

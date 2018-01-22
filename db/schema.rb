@@ -14,26 +14,28 @@ ActiveRecord::Schema.define(version: 20180119143448) do
 
   create_table "pairs", force: :cascade do |t|
     t.string "name"
-    t.integer "price_precision"
-    t.decimal "initial_margin"
-    t.decimal "minimum_margin"
-    t.decimal "maximum_order_size"
-    t.decimal "minimum_order_size"
-    t.decimal "margin"
-    t.datetime "expiration"
+    t.string "base_currency"
+    t.string "quote_currency"
+    t.decimal "quantity_increment"
+    t.decimal "tick_size"
+    t.decimal "take_liquidity_rate"
+    t.decimal "provide_liquidity_rate"
+    t.string "fee_currency"
     t.index ["name"], name: "index_pairs_on_name", unique: true
   end
 
   create_table "ticks", force: :cascade do |t|
     t.integer "pair_id"
-    t.decimal "mid"
-    t.decimal "bid"
     t.decimal "ask"
-    t.decimal "last_price"
+    t.decimal "bid"
+    t.decimal "last"
+    t.decimal "open"
     t.decimal "low"
     t.decimal "high"
     t.decimal "volume"
+    t.decimal "volume_quote"
     t.datetime "timestamp"
+    t.string "symbol"
     t.index ["pair_id"], name: "index_ticks_on_pair_id"
   end
 
